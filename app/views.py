@@ -24,3 +24,9 @@ def person_list(request):
         'person': person
     }
     return render(request, 'person_list.html', context=context)
+
+
+def add_per(request):
+    per = Person.objects.create(p_age=18, p_name='xxx', p_sex=1)
+    per.save()
+    return HttpResponse('创建成功')
